@@ -1,0 +1,87 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "debugger": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "context_servers": {
+    "mcp-server-context7": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {
+        "context7_api_key": "YOUR_CONTEXT7_API_KEY"
+      }
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "agent": {
+    "dock": "left",
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
+    },
+    "model_parameters": []
+  },
+  "buffer_font_family": "Dank Mono",
+  "terminal": {
+    "font_size": 14.0,
+    "font_family": "MesloLGS Nerd Font Mono"
+  },
+  "project_panel": {
+    "dock": "right",
+    "auto_fold_dirs": false
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "show_edit_predictions": true,
+  "soft_wrap": "bounded",
+  "tab_size": 2,
+  "file_types": {
+    "dotenv": [".env*"]
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "agent_buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Vercel Light",
+    "dark": "Kanagawa"
+  },
+  "profiles": {
+    "presentation": {
+      "buffer_font_size": 24.0,
+      "ui_font_size": 22,
+      "terminal": {
+        "font_size": 20
+      },
+      "agent_buffer_font_size": 18
+    }
+  },
+  "agent_servers": {
+    "OpenCode": {
+      "command": "opencode",
+      "args": ["acp"]
+    }
+  }
+}

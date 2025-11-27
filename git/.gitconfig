@@ -1,0 +1,13 @@
+[user]
+	name = Ondřej Hliba
+	email = ondrej.hliba@gmail.com
+[core]
+	editor = nano
+	excludesfile = /Users/ondrejhliba/.gitignore_global
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
