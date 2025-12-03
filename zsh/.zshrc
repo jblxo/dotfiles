@@ -11,11 +11,16 @@ export ZSH="$HOME/.oh-my-zsh"
 CASE_SENSITIVE="true"
 ENABLE_CORRECTION="false"
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting docker npm macos)
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  docker
+  npm
+  macos
+)
 
 source $ZSH/oh-my-zsh.sh
-
-
 
 # -------
 # Aliases

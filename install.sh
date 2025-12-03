@@ -93,19 +93,30 @@ else
 fi
 
 # 4. Install zsh plugins
-echo ""
 info "Checking zsh plugins..."
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
-if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-    info "Installing zsh-autosuggestions..."
-    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
-fi
+install_plugin_wrapper() {
+    local name="$1"
+    local source_path="$2"
+    local target_dir="$3"
 
-if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
-    info "Installing zsh-syntax-highlighting..."
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+    mkdir -p "$target_dir"
+
+    cat >"$target_dir/$name.plugin.zsh" <<EOF
+# shellcheck disable=SC1091
+if [ -f $source_path ]; then
+  source $source_path
+else
+  echo "[dotfiles] $name not found; install via Homebrew."
 fi
+EOF
+
+    info "Installed wrapper for $name"
+}
+
+install_plugin_wrapper "zsh-autosuggestions" "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh" "$DOTFILES_DIR/zsh/custom/plugins/zsh-autosuggestions"
+install_plugin_wrapper "zsh-syntax-highlighting" "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" "$DOTFILES_DIR/zsh/custom/plugins/zsh-syntax-highlighting"
 
 # 5. Create symlinks
 echo ""

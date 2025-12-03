@@ -2,7 +2,7 @@
 
 My personal dotfiles for macOS. Includes configurations for:
 
-- **Zsh** with Oh My Zsh and Powerlevel10k
+- **Zsh** with Oh My Zsh, Powerlevel10k, and Homebrew-managed plugins
 - **Git** settings
 - **SSH** config
 - **Zed** editor
@@ -14,7 +14,7 @@ My personal dotfiles for macOS. Includes configurations for:
 ```bash
 # Clone the repository
 git clone https://github.com/YOUR_USERNAME/dotfiles.git ~/dotfiles
-
+```
 # Run the install script
 cd ~/dotfiles
 ./install.sh
@@ -36,7 +36,8 @@ cd ~/dotfiles
 1. Generate SSH keys: `ssh-keygen -t ed25519 -C "your@email.com"`
 2. Add SSH key to GitHub: `gh ssh-key add ~/.ssh/id_ed25519.pub`
 3. Update API keys in `~/.config/zed/settings.json`
-4. Sign into apps (Raycast, 1Password, etc.)
+4. Ensure Homebrew installs `zsh-autosuggestions` and `zsh-syntax-highlighting` (already listed in the Brewfile)
+5. Sign into apps (Raycast, 1Password, etc.)
 
 ## Updating
 
